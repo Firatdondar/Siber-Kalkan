@@ -1,4 +1,3 @@
-Markdown
 # 🛡️ Siber Kalkan
 ### *Çift Çekirdekli Proaktif Mobil Tehdit Analizi ve İstihbarat Platformu*
 
@@ -97,7 +96,7 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["uvicorn", "main.py:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "4"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "4"]
 </code></pre>
 
 #### 2. docker-compose.yml
@@ -128,7 +127,7 @@ Güvenlik standartları gereği hassas veriler kod bloklarından izole edilerek 
 
 <pre><code>
 # --- SUNUCU YAPILANDIRMASI ---
-SECRET_KEY=super_secret_forensic_hash_key_654321
+SECRET_KEY=your_secret_forensic_hash_key_here
 ENVIRONMENT=production
 
 # --- HARİCİ API ENTEGRASYONLARI ---
@@ -136,8 +135,8 @@ VIRUSTOTAL_API_KEY=your_actual_virustotal_v3_api_token_here
 XPOSEDORNOT_API_KEY=your_xposedornot_data_breach_token_here
 
 # --- SOC KANAL AYARLARI ---
-TELEGRAM_BOT_TOKEN=8638671453:AAF_br_0utQzdK315ht7ZmZIg_0wosX0zVc
-DISCORD_WEBHOOK_URL=[https://discord.com/api/webhooks/your_id/your_token](https://discord.com/api/webhooks/your_id/your_token)
+TELEGRAM_BOT_TOKEN=your_telegram_bot_token_here
+DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/your_id/your_token
 </code></pre>
 
 ---

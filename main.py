@@ -608,3 +608,8 @@ def baglanti_test_getir(db: Session = Depends(get_db)):
         if datetime.utcnow().timestamp() - float(ayar_zaman) < 60:
             return {"status": "connected", "ip": ayar_ip, "message": f"Bağlantı Başarılı! Cihaz ({ayar_ip}) güvende."}
     return {"status": "waiting", "message": "Bağlantı bekleniyor..."}
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
